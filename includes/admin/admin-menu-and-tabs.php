@@ -59,7 +59,6 @@ class DT_Grid_Install_Plugin_Menu {
      * @since 0.1
      */
     public function register_menu() {
-        add_menu_page( __( 'Extensions (DT)', 'disciple_tools' ), __( 'Extensions (DT)', 'disciple_tools' ), 'manage_dt', 'dt_extensions', [ $this, 'extensions_menu' ], 'dashicons-admin-generic', 59 );
         add_submenu_page( 'dt_extensions', __( 'DT Grid Install', 'dt_grid_install_plugin' ), __( 'DT Grid Install', 'dt_grid_install_plugin' ), 'manage_dt', $this->token, [ $this, 'content' ] );
     }
 
