@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Disciple Tools - Grid Install
+ *Plugin Name: Disciple.Tools - Grid Install
  * Plugin URI: https://github.com/DiscipleTools/disciple-tools-starter-plugin
  * Description: DT Grid Install adds the full locations database.
  * of the Disciple Tools system.
