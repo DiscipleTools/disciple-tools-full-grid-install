@@ -3,7 +3,7 @@
  *Plugin Name: Disciple.Tools - Grid Install
  * Plugin URI: https://github.com/DiscipleTools/disciple-tools-starter-plugin
  * Description: DT Grid Install adds the full locations database.
- * of the Disciple Tools system.
+ * of the Disciple.Tools system.
  * Version:  0.1.0
  * Author URI: https://github.com/DiscipleTools
  * GitHub Plugin URI: https://github.com/DiscipleTools/disciple-tools-starter-plugin
@@ -19,9 +19,9 @@
 
 /*******************************************************************
  * Using the DT Grid Install
- * The Disciple Tools starter plugin is intended to accelerate integrations and extensions to the Disciple Tools system.
+ * The Disciple.Tools starter plugin is intended to accelerate integrations and extensions to the Disciple.Tools system.
  * This basic plugin starter has some of the basic elements to quickly launch and extension project in the pattern of
- * the Disciple Tools system.
+ * the Disciple.Tools system.
  */
 
 /**
@@ -38,7 +38,7 @@
  * The starter plugin is equipped with:
  * 1. Wordpress style requirements
  * 2. Travis Continuous Integration
- * 3. Disciple Tools Theme presence check
+ * 3. Disciple.Tools Theme presence check
  * 4. Remote upgrade system for ongoing updates outside the Wordpress Directory
  * 5. Multilingual ready
  * 6. PHP Code Sniffer support (composer) @use /vendor/bin/phpcs and /vendor/bin/phpcbf
@@ -64,11 +64,11 @@ function dt_grid_install_plugin() {
     /*
      * Check if the Disciple.Tools theme is loaded and is the latest required version
      */
-    $is_theme_dt = strpos( $wp_theme->get_template(), "disciple-tools-theme" ) !== false || $wp_theme->name === "Disciple Tools";
+    $is_theme_dt = strpos( $wp_theme->get_template(), "disciple-tools-theme" ) !== false || $wp_theme->name === "Disciple.Tools" || $wp_theme->name === "Disciple.Tools";
     if ( !$is_theme_dt || version_compare( $version, $dt_grid_install_required_dt_theme_version, "<" ) ) {
         add_action( 'admin_notices', 'dt_grid_install_plugin_hook_admin_notice' );
         add_action( 'wp_ajax_dismissed_notice_handler', 'dt_hook_ajax_notice_handler' );
-        return new WP_Error( 'current_theme_not_dt', 'Disciple Tools Theme not active or not latest version.' );
+        return new WP_Error( 'current_theme_not_dt', 'Disciple.Tools Theme not active or not latest version.' );
     }
     /**
      * Load useful function from the theme
@@ -218,7 +218,7 @@ class DT_Grid_Install_Plugin {
     public static function activation() {
 
         // Confirm 'Administrator' has 'manage_dt' privilege. This is key in 'remote' configuration when
-        // Disciple Tools theme is not installed, otherwise this will already have been installed by the Disciple Tools Theme
+        // Disciple.Tools theme is not installed, otherwise this will already have been installed by the Disciple.Tools Theme
         $role = get_role( 'administrator' );
         if ( !empty( $role ) ) {
             $role->add_cap( 'manage_dt' ); // gives access to dt plugin options
@@ -305,9 +305,9 @@ function dt_grid_install_plugin_hook_admin_notice() {
     global $dt_grid_install_required_dt_theme_version;
     $wp_theme = wp_get_theme();
     $current_version = $wp_theme->version;
-    $message = __( "'Disciple Tools - DT Grid Install' plugin requires 'Disciple Tools' theme to work. Please activate 'Disciple Tools' theme or make sure it is latest version.", "dt_grid_install_plugin" );
+    $message = __( "'Disciple.Tools - DT Grid Install' plugin requires 'Disciple.Tools' theme to work. Please activate 'Disciple.Tools' theme or make sure it is latest version.", "dt_grid_install_plugin" );
     if ( $wp_theme->get_template() === "disciple-tools-theme" ){
-        $message .= sprintf( esc_html__( 'Current Disciple Tools version: %1$s, required version: %2$s', 'dt_grid_install_plugin' ), esc_html( $current_version ), esc_html( $dt_grid_install_required_dt_theme_version ) );
+        $message .= sprintf( esc_html__( 'Current Disciple.Tools version: %1$s, required version: %2$s', 'dt_grid_install_plugin' ), esc_html( $current_version ), esc_html( $dt_grid_install_required_dt_theme_version ) );
     }
     // Check if it's been dismissed...
     if ( ! get_option( 'dismissed-dt-grid-install', false ) ) { ?>
