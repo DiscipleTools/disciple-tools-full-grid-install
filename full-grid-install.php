@@ -84,7 +84,7 @@ function dt_grid_install_plugin() {
         return DT_Grid_Install_Plugin::get_instance();
     }
 }
-add_action( 'plugins_loaded', 'dt_grid_install_plugin' );
+add_action( 'after_setup_theme', 'dt_grid_install_plugin' );
 
 /**
  * Singleton class for setting up the plugin.
