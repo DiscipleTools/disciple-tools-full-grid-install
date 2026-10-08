@@ -50,7 +50,6 @@ class DT_Grid_Install_Plugin_Menu {
     public function __construct() {
 
         add_action( "admin_menu", array( $this, "register_menu" ), 100 );
-
     } // End __construct()
 
 
@@ -185,7 +184,6 @@ class DT_Grid_Install_Tab_General
         <!-- End Box -->
         <?php
     }
-
 }
 
 /**
