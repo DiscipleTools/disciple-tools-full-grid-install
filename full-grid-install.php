@@ -171,7 +171,6 @@ class DT_Grid_Install_Plugin {
         // Admin and settings variables
         $this->token             = 'dt_grid_install_plugin';
         $this->version             = '0.1';
-
     }
 
     /**
@@ -223,7 +222,6 @@ class DT_Grid_Install_Plugin {
         if ( !empty( $role ) ) {
             $role->add_cap( 'manage_dt' ); // gives access to dt plugin options
         }
-
     }
 
     /**
