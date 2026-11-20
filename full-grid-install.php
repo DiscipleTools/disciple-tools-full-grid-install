@@ -1,10 +1,9 @@
 <?php
 /**
- *Plugin Name: Disciple.Tools - Grid Install
+ *Plugin Name: DEPRECATED - Disciple.Tools - Grid Install
  * Plugin URI: https://github.com/DiscipleTools/disciple-tools-starter-plugin
- * Description: DT Grid Install adds the full locations database.
- * of the Disciple.Tools system.
- * Version:  0.1.0
+ * Description: DELETE ME - I'm a deprecated plugin
+ * Version:  0.2.0
  * Author URI: https://github.com/DiscipleTools
  * GitHub Plugin URI: https://github.com/DiscipleTools/disciple-tools-starter-plugin
  * Requires at least: 4.7.0
@@ -84,7 +83,7 @@ function dt_grid_install_plugin() {
         return DT_Grid_Install_Plugin::get_instance();
     }
 }
-add_action( 'after_setup_theme', 'dt_grid_install_plugin' );
+//add_action( 'after_setup_theme', 'dt_grid_install_plugin' );
 
 /**
  * Singleton class for setting up the plugin.
